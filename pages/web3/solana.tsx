@@ -1,14 +1,16 @@
 // Entrypoint for the pieces of this website that I'll be trying web3 integrations on.
+import { NextPage } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function Solana() {
+const Solana: NextPage = () => {
     const [address, setAddress] = useState('')
     const [balance, setBalance] = useState(0)
 
     const handleSubmit = async (event: any) => {
         event.preventDefault()
         let addr = event.currentTarget.elements.inputAddress.value
+        setAddress(addr) 
         fetch(`/api/${addr}`)
             .then((res: Response) =>{
                 if (res.status == 200) {
@@ -31,3 +33,5 @@ export default function Solana() {
         </div>
     );
 }
+
+export default Solana;
