@@ -1,15 +1,16 @@
 // Entrypoint for the pieces of this website that I'll be trying web3 integrations on.
 import { NextPage } from 'next';
 import Link from 'next/link';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 const Solana: NextPage = () => {
     const [address, setAddress] = useState('')
     const [balance, setBalance] = useState(0)
 
-    const handleSubmit = async (event: any) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        let addr = event.currentTarget.elements.inputAddress.value
+        let props: any = event.currentTarget.elements // HtmlFormElement's type is messed up :shrug:
+        let addr = props.inputAddress.value
         setAddress(addr) 
         fetch(`/api/${addr}`)
             .then((res: Response) =>{
