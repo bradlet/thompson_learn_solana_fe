@@ -2,6 +2,7 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
+import styles from '../../styles/solana.module.css';
 
 const Solana: NextPage = () => {
     const [address, setAddress] = useState('')
@@ -22,14 +23,16 @@ const Solana: NextPage = () => {
     }
 
     return (
-        <div>
-            <h1>Web3 - Learn Solana</h1>
-            <p>Retreiving balance for: {address}</p>
-            <p>Current Balance: {balance}</p>
-            <form onSubmit={e => handleSubmit(e)}>
-                <input type="text" id="inputAddress" />
-                <input type="submit" />
-            </form>
+        <div className="center_container">
+            <h1 className={styles.test}>Web3 - Learn Solana</h1>
+            <div className="temp_box">
+                <p>Retreiving balance for: {address}</p>
+                <p>Current Balance: {balance}</p>
+                <form onSubmit={e => handleSubmit(e)}>
+                    <input type="text" id="inputAddress" />
+                    <input type="submit" />
+                </form>
+            </div>
             <Link href="/"><a>Return to home page</a></Link>
         </div>
     );

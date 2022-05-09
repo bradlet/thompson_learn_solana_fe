@@ -14,3 +14,20 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* Classes for helping visual tests */
+.temp_box {
+  border: 1px blue solid;
+}
+
+/* Custom global css */
+
+.center_container {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
