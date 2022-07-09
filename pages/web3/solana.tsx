@@ -24,9 +24,9 @@ const Solana: NextPage = () => {
     }
 
     return (
-        <div className="center_container">
-            <h1 className={styles.test}>Web3 - Learn Solana</h1>
-            <div className="temp_box">
+        <div>
+            <h1>Web3 - Learn Solana</h1>
+            <div>
                 <p>Retreiving balance for: {address}</p>
                 <p>Current Balance: {balance}</p>
                 <form onSubmit={e => handleSubmit(e)}>
@@ -34,7 +34,7 @@ const Solana: NextPage = () => {
                     <input type="submit" />
                 </form>
             </div>
-            <div className="temp_box">
+            <div>
                 <p>Here is bob: {JSON.stringify(TEST_STATS)}</p>
             </div>
             <Link href="/"><a>Return to home page</a></Link>
