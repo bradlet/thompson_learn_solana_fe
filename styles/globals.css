@@ -12,5 +12,40 @@ a {
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
   box-sizing: border-box;
+}
+
+/* Custom */
+.page-title {
+  font-size: 200%;
+  color: #0e02b1;
+}
+
+.top-bar {
+  width: 100%;
+  height: 7.5vh;
+  padding: 1.2em;
+  background-image: linear-gradient(#e0e0e0, #fcfcfc);
+  position: fixed;
+}
+
+main {
+  padding: 10vh;
+}
+
+.focus-banner {
+  padding: 2vh 2vw 2vh 2vw;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 0.2em;
+  word-spacing: 0.1em;
+  line-height: 1.6em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
