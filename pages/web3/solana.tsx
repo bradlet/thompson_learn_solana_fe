@@ -2,11 +2,12 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import TopBar from "../../components/TopBar";
 import { TEST_STATS } from "../../helpers/fixtures";
-import styles from "../../styles/solana.module.css";
+//import styles from "../../styles/solana.module.css";
 
 const Solana: NextPage = () => {
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useState("empty");
   const [balance, setBalance] = useState(0);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -28,10 +29,8 @@ const Solana: NextPage = () => {
   };
 
   return (
-    <div className="no-padding">
-      <header className="top-bar">
-        <h1 className="page-title">Web3 - Learn Solana</h1>
-      </header>
+    <div>
+      <TopBar pageTitle="Solana Page" />
       <main>
         <div>
           <p className="focus-banner">
@@ -44,16 +43,18 @@ const Solana: NextPage = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <p>Retreiving balance for: {address}</p>
-        <p>Current Balance: {balance}</p>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" id="inputAddress" />
-          <input type="submit" />
-        </form>
+        <div>
+          <p>Retreiving balance for: {address}</p>
+          <p>Current Balance: {balance}</p>
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <input type="text" id="inputAddress" />
+            <input type="submit" />
+          </form>
+          <div>
+            <p>Here is bob: {JSON.stringify(TEST_STATS)}</p>
+          </div>
+        </div>
       </main>
-      <div>
-        <p>Here is bob: {JSON.stringify(TEST_STATS)}</p>
-      </div>
       <Link href="/">
         <a>Return to home page</a>
       </Link>

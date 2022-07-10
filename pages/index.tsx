@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import TopBar from '../components/TopBar'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <TopBar pageTitle="Main page" />
       <main>
         <p>
           Get started by visiting the <Link href="/web3/solana"><a>Solana page</a></Link>
