@@ -6,23 +6,20 @@ import { TEST_STATS } from "../../helpers/fixtures";
 // console.log(solanaW3);
 
 export async function getServerSideProps(context: any) {
-    const test = {
-        color: "blue"
-    }
-
     return {
-        props: {
-            data: test
+        props: { 
+            data: TEST_STATS
         }
     }
 }
 
-const Character: NextPage = ({ data }: any) => {
+const Character: NextPage = ({data}: any) => {
   return (
     <div>
       <TopBar pageTitle="Character sheet" />
       <main>
-          {data.color}
+          Name: {data.currentName} <br/>
+          level: {data.level}
           <div>
             <p>Here is bob: {JSON.stringify(TEST_STATS)}</p>
           </div>
