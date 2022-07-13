@@ -3,7 +3,6 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import TopBar from "../../components/TopBar";
-import { TEST_STATS } from "../../helpers/fixtures";
 //import styles from "../../styles/solana.module.css";
 
 const Solana: NextPage = () => {
@@ -50,9 +49,6 @@ const Solana: NextPage = () => {
             <input type="text" id="inputAddress" />
             <input type="submit" />
           </form>
-          <div>
-            <p>Here is bob: {JSON.stringify(TEST_STATS)}</p>
-          </div>
         </div>
       </main>
       <Link href="/">
