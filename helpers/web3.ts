@@ -16,6 +16,8 @@ export function initializeKeypair(): web3.Keypair {
     return keypairFromSecretKey
 }
 
+// Note: Basically ported this over to the click event handler inside of ProgramPinger.
+// Hanging onto it here because this is just a practice repository, so, for notekeeping.
 export async function pingProgram(cxn: web3.Connection, payer: web3.Keypair) {
     const transaction = new web3.Transaction()
 
