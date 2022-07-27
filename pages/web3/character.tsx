@@ -7,30 +7,30 @@ import { TEST_STATS } from "../../helpers/fixtures";
 // console.log(solanaW3);
 
 export async function getServerSideProps(context: any) {
-  return {
-    props: {
-      data: TEST_STATS,
-    },
-  };
+    return {
+        props: {
+            data: TEST_STATS,
+        },
+    };
 }
 
 const Character: NextPage = ({ data }: any) => {
-  const { network, account } = useGlobalState() // Keeping this just so I remember the syntax
+    const { network, account } = useGlobalState(); // Keeping this just so I remember the syntax
 
-  return (
-    <div>
-      <TopBar pageTitle="Character sheet" />
-      <main>
+    return (
         <div>
-          Name: {data.currentName} <br />
-          level: {data.level}
+            <TopBar pageTitle="Character sheet" />
+            <main>
+                <div>
+                    Name: {data.currentName} <br />
+                    level: {data.level}
+                </div>
+            </main>
+            <Link href="/">
+                <a>Return to home page</a>
+            </Link>
         </div>
-      </main>
-      <Link href="/">
-        <a>Return to home page</a>
-      </Link>
-    </div>
-  );
+    );
 };
 
 export default Character;
