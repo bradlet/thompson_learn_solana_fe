@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
+import ProgramPinger from "../../components/ProgramPinger";
 import TopBar from "../../components/TopBar";
 import { useGlobalState } from "../../context";
 import { TEST_STATS } from "../../helpers/fixtures";
@@ -25,6 +26,7 @@ const Character: NextPage = ({ data }: any) => {
                     Name: {data.currentName} <br />
                     level: {data.level}
                 </div>
+                <ProgramPinger />
             </main>
             <Link href="/">
                 <a>Return to home page</a>
