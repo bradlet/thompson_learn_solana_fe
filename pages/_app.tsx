@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { GlobalContext } from '../context';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
+require('@solana/wallet-adapter-react-ui/styles.css');
 
 function App({ Component, pageProps }: AppProps) {
   const [network, setNetwork] = useState<web3.Cluster | undefined>("devnet")

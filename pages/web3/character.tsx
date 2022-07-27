@@ -15,15 +15,15 @@ export async function getServerSideProps(context: any) {
 }
 
 const Character: NextPage = ({ data }: any) => {
-  const { network, account } = useGlobalState()
+  const { network, account } = useGlobalState() // Keeping this just so I remember the syntax
+
   return (
     <div>
       <TopBar pageTitle="Character sheet" />
       <main>
-        Name: {data.currentName} <br />
-        level: {data.level}
         <div>
-          <p>Here is bob: {JSON.stringify(TEST_STATS)}</p>
+          Name: {data.currentName} <br />
+          level: {data.level}
         </div>
       </main>
       <Link href="/">
